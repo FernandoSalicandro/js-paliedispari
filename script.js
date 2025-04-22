@@ -21,7 +21,46 @@
 
 
 
+// Palindroma
+// Chiedere all’utente di inserire una parola
+// Creare una funzione per capire se la parola inserita è palindroma
+// NON USARE SPLIT E REVERSE!!! TUTTO CON CICLO FOR
 
+
+// chiedo all'utente di inserire una parola
+
+let userWord = prompt("Scrivi una parola");
+console.log(userWord);
+
+// creo la funzione per capire se la parola è palindroma
+
+
+
+
+function isPalindrome(userWord) {
+    // creo una variabile per inserire le lettere al contrario
+ let reverseWord = "";
+
+    // creo ciclo per pushare le lettere al contario in reverseWord
+    for (let i = userWord.length - 1; i >= 0; i--) {
+       
+        reverseWord = reverseWord + userWord[i];
+    }
+
+
+    console.log(reverseWord);
+    // stabilisco le condizioni di stampa
+    if (reverseWord === userWord) {
+        console.log("la parola è palindroma");
+
+    } else {
+        console.log("la parola NON è palindroma");
+    }
+
+}
+
+// richiamo la funzione
+isPalindrome(userWord);
 
 
 // Pari e Dispari
@@ -38,9 +77,9 @@ console.log(userNumberChoice);
 // Creo la funzione che genera il numero per il computer
 function computerNumber() {
 
-    let rndNumber = Math.floor(Math.random() * 5) + 1 ;
+    let rndNumber = Math.floor(Math.random() * 5) + 1;
     return rndNumber;
-    
+
 
 }
 
@@ -59,18 +98,7 @@ console.log(sum);
 //  controllo se la somma è pari o dispari
 function isEven(sum) {
 
-const even = sum % 2 === 0;
-
-   
-    if (even) {
-        return true;
-    }
-
-    else {
-        return false;
-    }
-    
-
+    const even = sum % 2 === 0;
 
 }
 
