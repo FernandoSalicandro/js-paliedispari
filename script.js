@@ -34,9 +34,6 @@ console.log(userNumberChoice);
 
 // salvo la scelta dell'utente in una variabile
 
-let evenOdd = [];
-evenOdd.push(userChoice)
-console.log(evenOdd);
 
 // Creo la funzione che genera il numero per il computer
 function computerNumber() {
@@ -81,9 +78,9 @@ const even = sum % 2 === 0;
 isEven(sum);
 // stampo il risultato del check
 
-if (isEven(sum) && evenOdd [0] === "pari") {
+if (isEven(sum) && userChoice === "pari") {
     console.log("la somma è pari e hai vinto");
-} else if (isEven(sum) === false && evenOdd [0] === "dispari") {
+} else if (isEven(sum) === false && userChoice === "dispari") {
     console.log("la somma è dispari e hai vinto");
 } else {
     {
