@@ -67,10 +67,33 @@ isPalindrome(userWord);
 
 // chiedo all'utente di inserire pari/dispari e di scegliere un numero da 1 a 5
 const userChoice = prompt("Scegli e scrivi : pari o dispari?");
+console.log(userChoice);
+
+
+
+function wordCheck(userChoice) {
+
+    for (let i = 0; i <= 0; i++) {
+
+    if (userChoice === "pari" || userChoice === "dispari") {
+        break;
+
+    
+
+} else {
+    console.log("puoi scrivere solo pari o dispari");
+    userChoice = prompt("Scegli e scrivi : pari o dispari?");
+}
+}
+}
+
+
+wordCheck(userChoice);
+
+
 const userNumberChoiceStr = prompt("Scegli e scrivi un numero da 1 a 5");
 const userNumberChoice = parseInt(userNumberChoiceStr);
 console.log(userNumberChoice);
-
 // salvo la scelta dell'utente in una variabile
 
 
@@ -98,7 +121,7 @@ console.log(sum);
 //  controllo se la somma è pari o dispari
 function isEven(sum) {
 
-    const even = sum % 2 === 0;
+   return sum % 2 === 0;
 
 }
 
