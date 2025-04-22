@@ -21,125 +21,71 @@
 
 
 
-// Palindroma
-// Chiedere all’utente di inserire una parola
-// Creare una funzione per capire se la parola inserita è palindroma
-// NON USARE SPLIT E REVERSE!!! TUTTO CON CICLO FOR
+// FUNZIONI
 
-
-// chiedo all'utente di inserire una parola
-
-let userWord = prompt("Scrivi una parola");
-console.log(userWord);
-
-// creo la funzione per capire se la parola è palindroma
-
-
-
-
+// Funzione per controllare se una parola è palindroma
 function isPalindrome(userWord) {
-    // creo una variabile per inserire le lettere al contrario
- let reverseWord = "";
-
-    // creo ciclo per pushare le lettere al contario in reverseWord
+    let reverseWord = "";
     for (let i = userWord.length - 1; i >= 0; i--) {
-       
         reverseWord = reverseWord + userWord[i];
     }
-
-
-    console.log(reverseWord);
-    // stabilisco le condizioni di stampa
     if (reverseWord === userWord) {
         console.log("la parola è palindroma");
-
     } else {
         console.log("la parola NON è palindroma");
     }
-
 }
 
-// richiamo la funzione
-isPalindrome(userWord);
-
-
-// Pari e Dispari
-
-// chiedo all'utente di inserire pari/dispari e di scegliere un numero da 1 a 5
-const userChoice = prompt("Scegli e scrivi : pari o dispari?");
-console.log(userChoice);
-
-
-
+// Funzione per controllare input pari/dispari
 function wordCheck(userChoice) {
-
-    for (let i = 0; i <= 0; i++) {
-
-    if (userChoice === "pari" || userChoice === "dispari") {
-        break;
-
-    
-
-} else {
-    console.log("puoi scrivere solo pari o dispari");
+   while (userChoice !== "pari" && userChoice !== "dispari") {
     userChoice = prompt("Scegli e scrivi : pari o dispari?");
+   }
 }
-}
-}
 
-
-wordCheck(userChoice);
-
-
-const userNumberChoiceStr = prompt("Scegli e scrivi un numero da 1 a 5");
-const userNumberChoice = parseInt(userNumberChoiceStr);
-console.log(userNumberChoice);
-// salvo la scelta dell'utente in una variabile
-
-
-// Creo la funzione che genera il numero per il computer
+// Funzione per generare numero random per il computer
 function computerNumber() {
-
     let rndNumber = Math.floor(Math.random() * 5) + 1;
     return rndNumber;
-
-
 }
 
-
-// richiamo la funzione
-computerNumber();
-
-// salvo il numero generato in una variabile
-
-const compNumber = computerNumber();
-console.log(compNumber);
-// definisco la somma
-let sum = userNumberChoice + compNumber;
-console.log(sum);
-
-//  controllo se la somma è pari o dispari
+// Funzione per controllare se un numero è pari
 function isEven(sum) {
-
-   return sum % 2 === 0;
-
+    return sum % 2 === 0;
 }
 
-// richiamo la funzione di controllo sulla somma
-isEven(sum);
-// stampo il risultato del check
-
-if (isEven(sum) && userChoice === "pari") {
-    console.log("la somma è pari e hai vinto");
-} else if (isEven(sum) === false && userChoice === "dispari") {
-    console.log("la somma è dispari e hai vinto");
-} else {
-    {
+// Funzione per determinare il vincitore
+function whoWins() {
+    if (isEven(sum) && userChoice === "pari") {
+        console.log("la somma è pari e hai vinto");
+    } else if (isEven(sum) === false && userChoice === "dispari") {
+        console.log("la somma è dispari e hai vinto");
+    } else {
         console.log("hai perso");
     }
 }
 
+// ESECUZIONE PALINDROME
+let userWord = prompt("Scrivi una parola");
+console.log(userWord);
+isPalindrome(userWord);
 
+// ESECUZIONE PARI E DISPARI
+const userChoice = prompt("Scegli e scrivi : pari o dispari?");
+console.log(userChoice);
+wordCheck(userChoice);
+
+const userNumberChoiceStr = prompt("Scegli e scrivi un numero da 1 a 5");
+const userNumberChoice = parseInt(userNumberChoiceStr);
+console.log(userNumberChoice);
+
+const compNumber = computerNumber();
+console.log(compNumber);
+
+let sum = userNumberChoice + compNumber;
+console.log(sum);
+
+whoWins();
 
 
 
